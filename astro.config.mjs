@@ -6,6 +6,7 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://lilsammytrautmanssandbox.com/',
   integrations: [react()],
   adapter: netlify(),
   vite: {
