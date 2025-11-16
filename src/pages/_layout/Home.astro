@@ -1,0 +1,36 @@
+---
+import { getEntry } from 'astro:content';
+import trauman from '../../assets/lil-sammy-trautman.png';
+import rambo from '../../assets/rambo-lego.png';
+import Figure from '../../components/content/Figure.astro';
+import ImageGallery from '../../components/content/ImageGallery.astro';
+import MarkdownContent from '../../components/content/MarkdownContent.astro';
+import Layout from '../../layouts/Layout.astro';
+import { container, flexCenter, flexCol, pt } from '../../styles';
+import { homeContent, sand, svgSand, svgSandWrapper } from './Home.css';
+
+const home = await getEntry('pages', 'home');
+---
+
+<Layout title={home.data.title} description={home.data.description}>
+  <main
+    class={`${container} ${pt[2]}`}
+    style="position: relative; min-height: 100vh;"
+  >
+    <div class={svgSandWrapper}>
+      <img src="/wave-bg.svg" alt="" class={svgSand} />
+    </div>
+    <div class={sand}></div>
+    <div
+      class={`${flexCol} ${flexCenter} ${homeContent}`}
+      style="position: relative; z-index: 2;"
+    >
+      <MarkdownContent entry={home} />
+
+      <ImageGallery>
+        <Figure src={trauman.src} alt="Lil' Sammy Trautman"  />
+        <Figure src={rambo.src} alt="Lil' Johnny Rambo"  />
+      </ImageGallery>
+    </div>
+  </main>
+</Layout>

@@ -1,22 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import myImage from '../assets/rambo-lego.png';
+import { Home } from './_layout';
 ---
 
-<Layout title="Lil' Sammy Trautman's Sandbox">
-  <main>
-    <h1>Lil' Sammy Trautman's Sandbox</h1>
-    <h2>Colonel Trautman Sir, do we get to win this time?</h2>
-    <Image src={myImage} alt="A description of my image." />
-  </main>
-</Layout>
+<Home />
 
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
+
