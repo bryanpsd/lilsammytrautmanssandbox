@@ -1,15 +1,15 @@
 ---
-import { getEntry } from 'astro:content';
-import trauman from '../../assets/lil-sammy-trautman.png';
-import rambo from '../../assets/rambo-lego.png';
-import Figure from '../../components/content/Figure.astro';
-import ImageGallery from '../../components/content/ImageGallery.astro';
-import MarkdownContent from '../../components/content/MarkdownContent.astro';
-import Layout from '../../layouts/Layout.astro';
-import { container, flexCenter, flexCol, pt } from '../../styles';
-import { homeContent, sand, svgSand, svgSandWrapper } from './Home.css';
+import { getEntry } from "astro:content";
+import trautman from "../../assets/lil-sammy-trautman.png";
+import rambo from "../../assets/rambo-lego.png";
+import Figure from "../../components/content/Figure.astro";
+import ImageGallery from "../../components/content/ImageGallery.astro";
+import MarkdownContent from "../../components/content/MarkdownContent.astro";
+import Layout from "../../layouts/Layout.astro";
+import { container, flexCenter, flexCol, pt } from "../../styles";
+import { homeContent, sand, svgSand, svgSandWrapper } from "./Home.css";
 
-const home = await getEntry('pages', 'home');
+const home = await getEntry("pages", "home");
 ---
 
 <Layout title={home.data.title} description={home.data.description}>
@@ -28,8 +28,8 @@ const home = await getEntry('pages', 'home');
       <MarkdownContent entry={home} />
 
       <ImageGallery>
-        <Figure src={trauman.src} alt="Lil' Sammy Trautman"  />
-        <Figure src={rambo.src} alt="Lil' Johnny Rambo"  />
+        <Figure src={trautman.src} alt="Lil' Sammy Trautman" />
+        <Figure src={rambo.src} alt="Lil' Johnny Rambo" />
       </ImageGallery>
     </div>
   </main>

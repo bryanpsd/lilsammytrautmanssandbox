@@ -47,6 +47,12 @@
       }
     }
   },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "indentScriptAndStyle": true
+    }
+  },
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
@@ -73,6 +79,9 @@
             "noUnusedImports": "off"
           }
         }
+      },
+      "formatter": {
+        "enabled": false
       }
     }
   ],

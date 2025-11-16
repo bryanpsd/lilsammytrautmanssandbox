@@ -1,5 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css';
-import { breakpoints } from '../../styles/tokens';
+import { breakpoints, fontFamily, fontSize, spacing } from '../../styles/tokens';
 
 export const sand = style({
   position: 'absolute',
@@ -44,7 +44,9 @@ export const svgSand = style({
 export const homeContent = style({});
 
 globalStyle(`${homeContent} h1`, {
-  fontFamily: "'Saira Stencil One', system-ui, sans-serif",
+  fontFamily: `'Saira Stencil One', ${fontFamily.sans}`,
+  fontSize: fontSize['5xl'],
+  marginBottom: spacing[4],
   textAlign: 'center',
   lineHeight: 1.2,
 });
