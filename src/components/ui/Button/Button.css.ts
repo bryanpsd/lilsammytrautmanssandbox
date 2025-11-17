@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { colors, fontSize, fontWeight, lineHeight, spacing } from '../../styles/tokens';
+import { colors, fontSize, fontWeight, lineHeight, spacing } from '../../../styles/tokens';
 
 /**
  * Example Button Component Styles

@@ -1,13 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import { colors, fontSize, lineHeight, spacing } from '../../styles';
 
-export const figureWrapper = style({
-  margin: 0,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'flex-end',
-});
-
 export const image = style({
   display: 'block',
   width: '100%',

@@ -3,22 +3,14 @@ interface Props {
   src: string; // Use importedImage.src or a public path
   alt: string;
   caption?: string;
-  maxHeight?: number;
 }
 
-import * as s from './Figure.css';
+import * as s from "./Figure.css";
 
-const { src, alt, caption, maxHeight } = Astro.props as Props;
+const { src, alt, caption } = Astro.props as Props;
 ---
-<div class={s.figureWrapper}>
-<figure style={maxHeight ? { height: `${maxHeight}px` } : undefined}>
-  <img 
-    src={src} 
-    alt={alt} 
-    class={s.image} 
-    loading="lazy" 
-    decoding="async"
-  />
+
+<figure>
+  <img src={src} alt={alt} class={s.image} loading="lazy" decoding="async" />
   {caption && <figcaption class={s.caption}>{caption}</figcaption>}
 </figure>
-</div>

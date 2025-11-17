@@ -1,0 +1,21 @@
+---
+import { getEntry } from "astro:content";
+import trautman from "../../assets/lil-sammy-trautman.png";
+import rambo from "../../assets/rambo-lego.png";
+
+import Figure from "../../components/content/Figure.astro";
+import ImageGallery from "../../components/content/ImageGallery.astro";
+import MarkdownContent from "../../components/content/MarkdownContent.astro";
+
+import { introContent } from "./Intro.css";
+
+const intro = await getEntry("sections", "intro");
+---
+
+<section class={introContent}>
+  <MarkdownContent entry={intro} />
+  <ImageGallery>
+    <Figure src={trautman.src} alt="Lil' Sammy Trautman" />
+    <Figure src={rambo.src} alt="Lil' Johnny Rambo" />
+  </ImageGallery>
+</section>
