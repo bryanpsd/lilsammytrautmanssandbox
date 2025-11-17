@@ -1,5 +1,5 @@
-import { globalStyle, style } from '@vanilla-extract/css';
-import { colors, fontFamily, fontSize, mediaQuery, spacing } from '../tokens';
+import { style } from '@vanilla-extract/css';
+import { colors, mediaQuery, spacing } from '../tokens';
 
 /**
  * Layout utility classes
@@ -92,17 +92,4 @@ export const sand = style({
   bottom: 0,
   backgroundColor: colors.brand.secondary,
   zIndex: 0,
-});
-
-export const homeContent = style({
-  position: 'relative',
-  zIndex: 2,
-});
-
-globalStyle(`${homeContent} h1`, {
-  fontFamily: `'Saira Stencil One', ${fontFamily.sans}`,
-  fontSize: fontSize['5xl'],
-  marginBottom: spacing[4],
-  textAlign: 'center',
-  lineHeight: 1.2,
 });

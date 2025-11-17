@@ -3,19 +3,33 @@ import { getEntry } from "astro:content";
 import trautman from "../../assets/lil-sammy-trautman.png";
 import rambo from "../../assets/rambo-lego.png";
 
-import Figure from "../../components/content/Figure.astro";
-import ImageGallery from "../../components/content/ImageGallery.astro";
 import MarkdownContent from "../../components/content/MarkdownContent.astro";
-
-import { introContent } from "./Intro.css";
+import { flex, flexCenter, flexRow, gap, mt } from "../../styles";
+import { image, introContent, introHeading } from "./Intro.css";
 
 const intro = await getEntry("sections", "intro");
 ---
 
 <section class={introContent}>
-  <MarkdownContent entry={intro} />
-  <ImageGallery>
-    <Figure src={trautman.src} alt="Lil' Sammy Trautman" />
-    <Figure src={rambo.src} alt="Lil' Johnny Rambo" />
-  </ImageGallery>
+  <MarkdownContent entry={intro} headingClass={introHeading} />
+  <div class={`${flex} ${flexCenter} ${flexRow} ${gap[4]} ${mt[4]}`}>
+    <div>
+      <img
+        src={trautman.src}
+        alt="Lil'Sammy Trautman"
+        loading="lazy"
+        decoding="async"
+        class={image}
+      />
+    </div>
+    <div>
+      <img
+        src={rambo.src}
+        alt="Lil'Johnny Rambo"
+        loading="lazy"
+        decoding="async"
+        class={image}
+      />
+    </div>
+  </div>
 </section>

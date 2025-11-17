@@ -3,10 +3,13 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
   entry: CollectionEntry<"sections">;
+  headingClass?: string;
 }
 
-const { entry } = Astro.props;
+const { entry, headingClass } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Content />
+<div class={headingClass}>
+  <Content />
+</div>
