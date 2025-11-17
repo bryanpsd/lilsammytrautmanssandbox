@@ -1,14 +1,12 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  entry: CollectionEntry<'pages'>;
+  entry: CollectionEntry<"sections">;
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<article>
-  <Content />
-</article>
+<Content />

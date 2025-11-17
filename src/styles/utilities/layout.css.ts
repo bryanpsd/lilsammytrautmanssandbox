@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
-import { spacing } from '../tokens';
+import { globalStyle, style } from '@vanilla-extract/css';
+import { colors, fontFamily, fontSize, mediaQuery, spacing } from '../tokens';
 
 /**
  * Layout utility classes
@@ -57,4 +57,52 @@ export const gridCols4 = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(4, 1fr)',
   gap: spacing[6],
+});
+
+export const sandSvg = style({
+  position: 'absolute',
+  top: '35%',
+  left: 0,
+  right: 0,
+  transform: 'translateY(-50%)',
+  width: '100%',
+  height: 'auto',
+  zIndex: 1,
+  '@media': {
+    [mediaQuery.md]: {
+      top: '41%',
+    },
+
+    [mediaQuery.xl]: {
+      top: '35%',
+    },
+  },
+});
+
+export const sand = style({
+  position: 'absolute',
+  top: '40%',
+  '@media': {
+    [mediaQuery.md]: {
+      top: '48%',
+    },
+  },
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: colors.brand.secondary,
+  zIndex: 0,
+});
+
+export const homeContent = style({
+  position: 'relative',
+  zIndex: 2,
+});
+
+globalStyle(`${homeContent} h1`, {
+  fontFamily: `'Saira Stencil One', ${fontFamily.sans}`,
+  fontSize: fontSize['5xl'],
+  marginBottom: spacing[4],
+  textAlign: 'center',
+  lineHeight: 1.2,
 });
