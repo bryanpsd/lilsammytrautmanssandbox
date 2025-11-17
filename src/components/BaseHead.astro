@@ -1,4 +1,6 @@
 ---
+import GoogleAnalytics  from "./GoogleAnalytics.astro";
+
 interface Props {
   title: string;
   description?: string;
@@ -53,3 +55,12 @@ const {
   <meta property="twitter:description" content={description} />
   <meta property="twitter:image" content={new URL(image, Astro.url)} />
 </head>
+
+<GoogleAnalytics measurementId={"G-J42KFK34PQ"} />
+<script is:inline>
+	if ("serviceWorker" in navigator) {
+		window.addEventListener("load", () => {
+			navigator.serviceWorker.register("/sw.js", { scope: "/" });
+		});
+	}
+</script>
