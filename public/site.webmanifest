@@ -1,7 +1,7 @@
 {
-  "name": "Lil' Sammy Trautman's Sandbox",
+  "name": "Lil'Sammy Trautman's Sandbox",
   "short_name": "LST Sandbox",
-  "description": "Lil' Sammy Trautman's Sandbox — built with Astro, React, and TypeScript.",
+  "description": "Lil'Sammy Trautman's Sandbox — built with Astro, React, and TypeScript.",
   "start_url": "/",
   "scope": "/",
   "icons": [
