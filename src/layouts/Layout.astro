@@ -1,9 +1,9 @@
 ---
 import sandWave from "../assets/wave-bg.svg";
 import BaseHead from "../components/BaseHead.astro";
-import { container, flexCenter, flexCol, pt } from "../styles";
+import { sprinkles } from "../styles";
 import "../styles/global/global.css";
-import { sand, sandSvg } from "../styles/utilities/layout.css";
+import { main, sand, sandSvg } from "./Layout.css";
 
 interface Props {
   title: string;
@@ -24,7 +24,7 @@ const { title, description, image, canonicalURL } = Astro.props;
     canonicalURL={canonicalURL}
   />
   <body>
-    <main class={`${container} ${pt[2]} ${flexCol} ${flexCenter}`}>
+    <main class={main}>
       <slot />
     </main>
     <img src={sandWave.src} alt="" class={sandSvg} />

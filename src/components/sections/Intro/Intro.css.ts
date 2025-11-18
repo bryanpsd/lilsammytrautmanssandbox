@@ -1,21 +1,22 @@
 import { globalStyle, style } from '@vanilla-extract/css';
-import { fontFamily, spacing } from '../../styles/tokens';
+import { sprinkles } from '../../../styles';
+import { fontFamily } from '../../../styles/tokens';
 
-export const introContent = style({
+export const introContent = sprinkles({
   position: 'relative',
-  zIndex: 2,
+  zIndex: 20,
 });
 
 export const introHeading = style({});
 
 globalStyle(`${introHeading} h1`, {
   fontFamily: `'Saira Stencil One', ${fontFamily.sans}`,
-  marginBottom: spacing[4],
+  marginBottom: '1rem',
   textAlign: 'center',
 });
 
-export const image = style({
+export const image = sprinkles({
   display: 'block',
-  width: '100%',
+  width: 'full',
   height: 'auto',
 });

@@ -6,6 +6,9 @@
 // Import global styles (side effects)
 import './global/reset.css';
 
-// Export tokens and utilities
+export { mediaQueryBreakpoints } from './breakpoints';
+// Export sprinkles for utility-first styling
+export { type Sprinkles, sprinkles } from './sprinkles.css';
+
+// Export tokens
 export * from './tokens';
-export * from './utilities';

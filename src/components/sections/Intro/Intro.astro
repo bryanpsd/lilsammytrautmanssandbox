@@ -1,10 +1,9 @@
 ---
 import { getEntry } from "astro:content";
-import trautman from "../../assets/lil-sammy-trautman.png";
-import rambo from "../../assets/rambo-lego.png";
-
-import MarkdownContent from "../../components/content/MarkdownContent.astro";
-import { flex, flexCenter, flexRow, gap, mt } from "../../styles";
+import trautman from "../../../assets/lil-sammy-trautman.png";
+import rambo from "../../../assets/rambo-lego.png";
+import MarkdownContent from "../../../components/content/MarkdownContent.astro";
+import { sprinkles } from "../../../styles";
 import { image, introContent, introHeading } from "./Intro.css";
 
 const intro = await getEntry("sections", "intro");
@@ -12,7 +11,16 @@ const intro = await getEntry("sections", "intro");
 
 <section class={introContent}>
   <MarkdownContent entry={intro} headingClass={introHeading} />
-  <div class={`${flex} ${flexCenter} ${flexRow} ${gap[4]} ${mt[4]}`}>
+  <div
+    class={sprinkles({
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "row",
+      gap: 12,
+      marginTop: 12,
+    })}
+  >
     <div>
       <img
         src={trautman.src}

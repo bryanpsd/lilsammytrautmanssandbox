@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { button, buttonDanger, buttonSecondary } from './Button.css';
+import { button } from './Button.css';
 
 interface ButtonProps {
   children: ReactNode;
@@ -9,14 +9,8 @@ interface ButtonProps {
 }
 
 export function Button({ children, variant = 'primary', onClick, type = 'button' }: ButtonProps) {
-  const variantClass = {
-    primary: button,
-    secondary: `${button} ${buttonSecondary}`,
-    danger: `${button} ${buttonDanger}`,
-  }[variant];
-
   return (
-    <button type={type} className={variantClass} onClick={onClick}>
+    <button type={type} className={button({ variant })} onClick={onClick}>
       {children}
     </button>
   );
